@@ -1,0 +1,412 @@
+
+<html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by Aanchal1103 (http://jsbin.com/hazojix/3/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+
+<head>
+    <title>ludo game</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href='https://fonts.googleapis.com/css?family=Bevan' rel='stylesheet'>
+
+<style id="jsbin-css">
+
+td {
+    height: 40px;
+    width: 38px;
+    padding: 0;
+    border: 2px solid black;
+    text-align: center;
+}
+
+#ludo-board {
+    margin-right: auto;
+    margin-left: auto;
+    border-collapse: collapse;
+    border: 2px solid;
+}
+
+#arrow-up,
+#arrow-down,
+#arrow-back,
+#arrow-forward
+{
+  font-size: 32px;
+}
+
+#arrow-down
+{
+  color: yellow;
+}
+
+#arrow-up
+{
+  color: red;
+}
+
+#arrow-forward
+{
+  color: green;
+}
+
+#arrow-back
+{
+  color: blue;
+}
+
+#cell-2-2,
+#cell-2-11,
+#cell-11-2,
+#cell-11-10
+{
+  border-right: 0;
+  border-bottom: 0;
+  padding-right: 2px;
+  padding-bottom: 2px;
+}
+
+#cell-2-4,
+#cell-2-13,
+#cell-11-4,
+#cell-11-13
+{
+  border-left: 0;
+  border-bottom: 0;
+  padding-left: 2px;
+  padding-bottom: 2px;
+}
+
+#cell-4-2,
+#cell-4-11,
+#cell-13-2,
+#cell-13-10
+{
+  border-right: 0;
+  border-top: 0;
+  padding-right: 2px;
+  padding-top: 2px;
+}
+
+#cell-4-4,
+#cell-4-13,
+#cell-13-4,
+#cell-13-13
+{
+  border-left: 0;
+  border-top: 0;
+  padding-left: 2px;
+  padding-top: 2px;
+}
+
+.green,
+#cell-7-2,
+#cell-8-2,
+#cell-8-3,
+#cell-8-4,
+#cell-8-5,
+#cell-8-6
+{
+    background-color: green;
+}
+
+.yellow,
+#cell-2-8,
+#cell-2-9,
+#cell-3-8,
+#cell-4-8,
+#cell-5-8,
+#cell-6-8
+{
+    background-color: yellow;
+}
+
+.blue,
+#cell-8-10,
+#cell-8-11,
+#cell-8-12,
+#cell-8-13,
+#cell-8-14,
+#cell-9-14
+{
+    background-color: blue;
+}
+
+.red,
+#cell-10-8,
+#cell-11-8,
+#cell-12-8,
+#cell-13-8,
+#cell-14-8,
+#cell-14-7
+{
+    background-color: red;
+}
+
+#cell-1-1, #cell-1-2, #cell-1-6, #cell-6-2 {
+  border: 0px;
+  background-color: green;
+}
+
+#cell-1-10, #cell-1-11, #cell-1-15, #cell-6-11 {
+  border: 0px;
+  background-color: yellow;
+}
+
+#cell-10-1, #cell-10-6, #cell-10-2, #cell-15-2 {
+  border: 0px;
+  background-color: red;
+}
+
+#cell-10-10, #cell-10-15, #cell-10-11, #cell-15-11 {
+  border: 0px;
+  background-color: blue;
+}
+
+.player-name
+{
+  font-size: 18px;
+  font-family: 'Bevan';
+  font-weight: bold;
+  color: white;
+  -webkit-text-stroke: 2px black;
+  text-outline: 1px black;
+}
+
+.circle {
+  border-radius: 50%;
+  border: 2px solid;
+  height: 46px;
+  width: 46px;
+  margin: auto;
+}
+
+.star-icon
+{
+  font-size: 32px;
+}
+
+.center-pattern {
+  height: 0;
+  width: 0;
+  border-left: 60px solid green;
+  border-right: 60px solid blue;
+  border-top: 60px solid yellow;
+  border-bottom: 60px solid red;
+}
+</style>
+</head>
+
+<body>
+    <table id="ludo-board">
+        <tr id="row-1">
+            <td id="cell-1-1" rowspan="6"></td>
+            <td id="cell-1-2" colspan="4" class="player-name">Player 3</td>
+            <td id="cell-1-6" rowspan="6"></td>
+            <td id="cell-1-7"></td>
+            <td id="cell-1-8">
+              <i id="arrow-down" class="material-icons">arrow_downward</i>
+            </td>
+            <td id="cell-1-9"></td>
+            <td id="cell-1-10" rowspan="6"></td>
+            <td id="cell-1-11" colspan="4" class="player-name">Player 2</td>
+            <td id="cell-1-15" rowspan="6"></td>
+        </tr>
+        <tr id="row-2">
+            <td id="cell-2-2" colspan="2" rowspan="2">
+              <div class="circle green">
+                <span class="glyphicon glyphicon-pawn"></span>
+              </div>
+            </td>
+            <td id="cell-2-4" colspan="2" rowspan="2">
+              <div class="circle green"></div>
+            </td>
+            <td id="cell-2-7"></td>
+            <td id="cell-2-8"></td>
+            <td id="cell-2-9"></td>
+            <td id="cell-2-11" colspan="2" rowspan="2">
+              <div class="circle yellow"></div>
+            </td>
+            <td id="cell-2-13" colspan="2" rowspan="2">
+              <div class="circle yellow"></div>
+            </td>
+        </tr>
+        <tr id="row-3">
+            <td id="cell-3-7">
+              <i class="material-icons star-icon">star_border</i>
+            </td>
+            <td id="cell-3-8"></td>
+            <td id="cell-3-9"></td>
+        </tr>
+        <tr id="row-4">
+            <td id="cell-4-2" colspan="2" rowspan="2">
+              <div class="circle green"></div>
+            </td>
+            <td id="cell-4-4" colspan="2" rowspan="2">
+              <div class="circle green"></div>
+            </td>
+            <td id="cell-4-7"></td>
+            <td id="cell-4-8"></td>
+            <td id="cell-4-9"></td>
+            <td id="cell-4-11" colspan="2" rowspan="2">
+              <div class="circle yellow"></div>
+            </td>
+            <td id="cell-4-13" colspan="2" rowspan="2">
+              <div class="circle yellow"></div>
+            </td>
+        </tr>
+        <tr id="row-5">
+            <td id="cell-5-7"></td>
+            <td id="cell-5-8"></td>
+            <td id="cell-5-9"></td>
+        </tr>
+        <tr id="row-6">
+            <td id="cell-6-2" colspan="4"></td>
+            <td id="cell-6-7"></td>
+            <td id="cell-6-8"></td>
+            <td id="cell-6-9"></td>
+            <td id="cell-6-11" colspan="4"></td>
+        </tr>
+        <tr id="row-7">
+            <td id="cell-7-1"></td>
+            <td id="cell-7-2"></td>
+            <td id="cell-7-3"></td>
+            <td id="cell-7-4"></td>
+            <td id="cell-7-5"></td>
+            <td id="cell-7-6"></td>
+            <td id="cell-7-7" colspan="3" rowspan="3">
+              <div class="center-pattern"></div>
+            </td>
+            <td id="cell-7-10"></td>
+            <td id="cell-7-11"></td>
+            <td id="cell-7-12"></td>
+            <td id="cell-7-13">
+              <i class="material-icons star-icon">star_border</i>
+            </td>
+            <td id="cell-7-14"></td>
+            <td id="cell-7-15"></td>
+        </tr>
+        <tr id="row-8">
+            <td id="cell-8-1">
+              <i id="arrow-forward" class="material-icons">arrow_forward</i>
+            </td>
+            <td id="cell-8-2"></td>
+            <td id="cell-8-3"></td>
+            <td id="cell-8-4"></td>
+            <td id="cell-8-5"></td>
+            <td id="cell-8-6"></td>
+            <td id="cell-8-10"></td>
+            <td id="cell-8-11"></td>
+            <td id="cell-8-12"></td>
+            <td id="cell-8-13"></td>
+            <td id="cell-8-14"></td>
+            <td id="cell-8-15">
+              <i id="arrow-back" class="material-icons">arrow_back</i>
+            </td>
+        </tr>
+        <tr id="row-9">
+            <td id="cell-9-1"></td>
+            <td id="cell-9-2"></td>
+            <td id="cell-9-3">
+              <i class="material-icons star-icon">star_border</i>
+            </td>
+            <td id="cell-9-4"></td>
+            <td id="cell-9-5"></td>
+            <td id="cell-9-6"></td>
+            <td id="cell-9-10"></td>
+            <td id="cell-9-11"></td>
+            <td id="cell-9-12"></td>
+            <td id="cell-9-13"></td>
+            <td id="cell-9-14"></td>
+            <td id="cell-9-15"></td>
+        </tr>
+        <tr id="row-10">
+            <td id="cell-10-1" rowspan="6"></td>
+            <td id="cell-10-2" colspan="4"></td>
+            <td id="cell-10-6" rowspan="6"></td>
+            <td id="cell-10-7"></td>
+            <td id="cell-10-8"></td>
+            <td id="cell-10-9"></td>
+            <td id="cell-10-10" rowspan="6"></td>
+            <td id="cell-10-11" colspan="4"></td>
+            <td id="cell-10-15" rowspan="6"></td>
+        </tr>
+        <tr id="row-11">
+            <td id="cell-11-2" colspan="2" rowspan="2">
+              <div class="circle red"></div>
+            </td>
+            <td id="cell-11-4" colspan="2" rowspan="2">
+              <div class="circle red"></div>
+            </td>
+            <td id="cell-11-7"></td>
+            <td id="cell-11-8"></td>
+            <td id="cell-11-9"></td>
+            <td id="cell-11-10" colspan="2" rowspan="2">
+              <div class="circle blue"></div>
+            </td>
+            <td id="cell-11-13" colspan="2" rowspan="2">
+              <div class="circle blue"></div>
+            </td>
+        </tr>
+        <tr id="row-12">
+            <td id="cell-12-7"></td>
+            <td id="cell-12-8"></td>
+            <td id="cell-12-9"></td>
+        </tr>
+        <tr id="row-13">
+            <td id="cell-13-2" colspan="2" rowspan="2">
+              <div class="circle red"></div>
+            </td>
+            <td id="cell-13-4" colspan="2" rowspan="2">
+              <div class="circle red"></div>
+            </td>
+            <td id="cell-13-7"></td>
+            <td id="cell-13-8"></td>
+            <td id="cell-13-9">
+              <i class="material-icons star-icon">star_border</i>
+            </td>
+            <td id="cell-13-10" colspan="2" rowspan="2">
+              <div class="circle blue"></div>
+            </td>
+            <td id="cell-13-13" colspan="2" rowspan="2">
+              <div class="circle blue"></div>
+            </td>
+        </tr>
+        <tr id="row-14">
+            <td id="cell-14-7"></td>
+            <td id="cell-14-8"></td>
+            <td id="cell-14-9"></td>
+        </tr>
+        <tr id="row-15">
+            <td id="cell-15-2" colspan="4" class="player-name">Player 1</td>
+            <td id="cell-15-7"></td>
+            <td id="cell-15-8">
+              <i id="arrow-up" class="material-icons">arrow_upward</i>
+            </td>
+            <td id="cell-15-9"></td>
+            <td id="cell-15-11" colspan="4" class="player-name">Player 4</td>
+        </tr>
+    </table>
+<script src="http://static.jsbin.com/js/render/edit.js?4.1.4"></script>
+<script>jsbinShowEdit && jsbinShowEdit({"static":"http://static.jsbin.com","root":"http://jsbin.com"});</script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1656750-34', 'auto');
+ga('require', 'linkid', 'linkid.js');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');
+
+</script>
+
+</body>
+
+</html>
