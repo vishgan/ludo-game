@@ -3,9 +3,7 @@
 <!--
 Created using JS Bin
 http://jsbin.com
-
 Copyright (c) 2018 by Aanchal1103 (http://jsbin.com/hazojix/3/edit)
-
 Released under the MIT license: http://jsbin.mit-license.org
 -->
 <meta name="robots" content="noindex">
@@ -16,7 +14,6 @@ Released under the MIT license: http://jsbin.mit-license.org
     <link href='https://fonts.googleapis.com/css?family=Bevan' rel='stylesheet'>
 
 <style>
-
 td {
     height: 40px;
     width: 38px;
@@ -24,14 +21,12 @@ td {
     border: 2px solid black;
     text-align: center;
 }
-
 #ludo-board {
     margin-right: auto;
     margin-left: auto;
     border-collapse: collapse;
     border: 2px solid;
 }
-
 #arrow-up,
 #arrow-down,
 #arrow-back,
@@ -39,27 +34,22 @@ td {
 {
   font-size: 32px;
 }
-
 #arrow-down
 {
   color: yellow;
 }
-
 #arrow-up
 {
   color: red;
 }
-
 #arrow-forward
 {
   color: green;
 }
-
 #arrow-back
 {
   color: blue;
 }
-
 #cell-2-2,
 #cell-2-11,
 #cell-11-2,
@@ -70,7 +60,6 @@ td {
   padding-right: 2px;
   padding-bottom: 2px;
 }
-
 #cell-2-4,
 #cell-2-13,
 #cell-11-4,
@@ -81,7 +70,6 @@ td {
   padding-left: 2px;
   padding-bottom: 2px;
 }
-
 #cell-4-2,
 #cell-4-11,
 #cell-13-2,
@@ -92,7 +80,6 @@ td {
   padding-right: 2px;
   padding-top: 2px;
 }
-
 #cell-4-4,
 #cell-4-13,
 #cell-13-4,
@@ -103,7 +90,6 @@ td {
   padding-left: 2px;
   padding-top: 2px;
 }
-
 .green,
 #cell-7-2,
 #cell-8-2,
@@ -114,7 +100,6 @@ td {
 {
     background-color: green;
 }
-
 .yellow,
 #cell-2-8,
 #cell-2-9,
@@ -125,7 +110,6 @@ td {
 {
     background-color: yellow;
 }
-
 .blue,
 #cell-8-10,
 #cell-8-11,
@@ -136,7 +120,6 @@ td {
 {
     background-color: blue;
 }
-
 .red,
 #cell-10-8,
 #cell-11-8,
@@ -147,37 +130,29 @@ td {
 {
     background-color: red;
 }
-
 #cell-1-1, #cell-1-2, #cell-1-6, #cell-6-2 {
   border: 0px;
   background-color: green;
 }
-
 #cell-1-10, #cell-1-11, #cell-1-15, #cell-6-11 {
   border: 0px;
   background-color: yellow;
 }
-
 #cell-10-1, #cell-10-6, #cell-10-2, #cell-15-2 {
   border: 0px;
   background-color: red;
 }
-
 #cell-10-10, #cell-10-15, #cell-10-11, #cell-15-11 {
   border: 0px;
   background-color: blue;
 }
-
 .player-name
 {
   font-size: 18px;
-  font-family: 'Bevan';
+  font-family: 'trebuchet MS';
   font-weight: bold;
-  color: white;
-  -webkit-text-stroke: 2px black;
-  text-outline: 1px black;
+  color: #000;
 }
-
 .circle {
   border-radius: 50%;
   border: 2px solid;
@@ -185,12 +160,10 @@ td {
   width: 46px;
   margin: auto;
 }
-
 .star-icon
 {
   font-size: 32px;
 }
-
 .center-pattern {
   height: 0;
   width: 0;
@@ -198,6 +171,18 @@ td {
   border-right: 60px solid blue;
   border-top: 60px solid yellow;
   border-bottom: 60px solid red;
+}
+
+.circle {
+  position: relative;
+}
+
+.circle img {
+position: absolute;
+left: 0;
+right: 0;
+width: 60px;
+transform: translate(-8px, -30px);
 }
 </style>
 </head>
@@ -220,20 +205,20 @@ td {
         <tr id="row-2">
             <td id="cell-2-2" colspan="2" rowspan="2">
               <div class="circle green">
-                <span class="glyphicon glyphicon-pawn"></span>
+                <img src="images/green.svg" alt="green" />
               </div>
             </td>
             <td id="cell-2-4" colspan="2" rowspan="2">
-              <div class="circle green"></div>
+              <div class="circle green"><img src="images/green.svg" alt="green" /></div>
             </td>
             <td id="cell-2-7"></td>
             <td id="cell-2-8"></td>
             <td id="cell-2-9"></td>
             <td id="cell-2-11" colspan="2" rowspan="2">
-              <div class="circle yellow"></div>
+              <div class="circle yellow"><img src="images/yellow.svg" alt="green" /></div>
             </td>
             <td id="cell-2-13" colspan="2" rowspan="2">
-              <div class="circle yellow"></div>
+              <div class="circle yellow"><img src="images/yellow.svg" alt="green" /></div>
             </td>
         </tr>
         <tr id="row-3">
@@ -245,19 +230,19 @@ td {
         </tr>
         <tr id="row-4">
             <td id="cell-4-2" colspan="2" rowspan="2">
-              <div class="circle green"></div>
+              <div class="circle green"><img src="images/green.svg" alt="green" /></div>
             </td>
             <td id="cell-4-4" colspan="2" rowspan="2">
-              <div class="circle green"></div>
+              <div class="circle green"><img src="images/green.svg" alt="green" /></div>
             </td>
             <td id="cell-4-7"></td>
             <td id="cell-4-8"></td>
             <td id="cell-4-9"></td>
             <td id="cell-4-11" colspan="2" rowspan="2">
-              <div class="circle yellow"></div>
+              <div class="circle yellow"><img src="images/yellow.svg" alt="green" /></div>
             </td>
             <td id="cell-4-13" colspan="2" rowspan="2">
-              <div class="circle yellow"></div>
+              <div class="circle yellow"><img src="images/yellow.svg" alt="green" /></div>
             </td>
         </tr>
         <tr id="row-5">
@@ -338,19 +323,19 @@ td {
         </tr>
         <tr id="row-11">
             <td id="cell-11-2" colspan="2" rowspan="2">
-              <div class="circle red"></div>
+              <div class="circle red"><img src="images/red.svg" alt="green" /></div>
             </td>
             <td id="cell-11-4" colspan="2" rowspan="2">
-              <div class="circle red"></div>
+              <div class="circle red"><img src="images/red.svg" alt="green" /></div>
             </td>
             <td id="cell-11-7"></td>
             <td id="cell-11-8"></td>
             <td id="cell-11-9"></td>
             <td id="cell-11-10" colspan="2" rowspan="2">
-              <div class="circle blue"></div>
+              <div class="circle blue"><img src="images/blue.svg" alt="green" /></div>
             </td>
             <td id="cell-11-13" colspan="2" rowspan="2">
-              <div class="circle blue"></div>
+              <div class="circle blue"><img src="images/blue.svg" alt="green" /></div>
             </td>
         </tr>
         <tr id="row-12">
@@ -360,10 +345,10 @@ td {
         </tr>
         <tr id="row-13">
             <td id="cell-13-2" colspan="2" rowspan="2">
-              <div class="circle red"></div>
+              <div class="circle red"><img src="images/red.svg" alt="green" /></div>
             </td>
             <td id="cell-13-4" colspan="2" rowspan="2">
-              <div class="circle red"></div>
+              <div class="circle red"><img src="images/red.svg" alt="green" /></div>
             </td>
             <td id="cell-13-7"></td>
             <td id="cell-13-8"></td>
@@ -371,10 +356,10 @@ td {
               <i class="material-icons star-icon">star_border</i>
             </td>
             <td id="cell-13-10" colspan="2" rowspan="2">
-              <div class="circle blue"></div>
+              <div class="circle blue"><img src="images/blue.svg" alt="green" /></div>
             </td>
             <td id="cell-13-13" colspan="2" rowspan="2">
-              <div class="circle blue"></div>
+              <div class="circle blue"><img src="images/blue.svg" alt="green" /></div>
             </td>
         </tr>
         <tr id="row-14">
