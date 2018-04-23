@@ -12,182 +12,17 @@ Released under the MIT license: http://jsbin.mit-license.org
     <title>ludo game</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href='https://fonts.googleapis.com/css?family=Bevan' rel='stylesheet'>
+    <link href="css/styles.css" rel="stylesheet">
+    <script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/dice.js"></script>
 
-<style>
-td {
-    height: 40px;
-    width: 38px;
-    padding: 0;
-    border: 2px solid black;
-    text-align: center;
-}
-#ludo-board {
-    margin-right: auto;
-    margin-left: auto;
-    border-collapse: collapse;
-    border: 2px solid;
-}
-#arrow-up,
-#arrow-down,
-#arrow-back,
-#arrow-forward
-{
-  font-size: 32px;
-}
-#arrow-down
-{
-  color: yellow;
-}
-#arrow-up
-{
-  color: red;
-}
-#arrow-forward
-{
-  color: green;
-}
-#arrow-back
-{
-  color: blue;
-}
-#cell-2-2,
-#cell-2-11,
-#cell-11-2,
-#cell-11-10
-{
-  border-right: 0;
-  border-bottom: 0;
-  padding-right: 2px;
-  padding-bottom: 2px;
-}
-#cell-2-4,
-#cell-2-13,
-#cell-11-4,
-#cell-11-13
-{
-  border-left: 0;
-  border-bottom: 0;
-  padding-left: 2px;
-  padding-bottom: 2px;
-}
-#cell-4-2,
-#cell-4-11,
-#cell-13-2,
-#cell-13-10
-{
-  border-right: 0;
-  border-top: 0;
-  padding-right: 2px;
-  padding-top: 2px;
-}
-#cell-4-4,
-#cell-4-13,
-#cell-13-4,
-#cell-13-13
-{
-  border-left: 0;
-  border-top: 0;
-  padding-left: 2px;
-  padding-top: 2px;
-}
-.green,
-#cell-7-2,
-#cell-8-2,
-#cell-8-3,
-#cell-8-4,
-#cell-8-5,
-#cell-8-6
-{
-    background-color: green;
-}
-.yellow,
-#cell-2-8,
-#cell-2-9,
-#cell-3-8,
-#cell-4-8,
-#cell-5-8,
-#cell-6-8
-{
-    background-color: yellow;
-}
-.blue,
-#cell-8-10,
-#cell-8-11,
-#cell-8-12,
-#cell-8-13,
-#cell-8-14,
-#cell-9-14
-{
-    background-color: blue;
-}
-.red,
-#cell-10-8,
-#cell-11-8,
-#cell-12-8,
-#cell-13-8,
-#cell-14-8,
-#cell-14-7
-{
-    background-color: red;
-}
-#cell-1-1, #cell-1-2, #cell-1-6, #cell-6-2 {
-  border: 0px;
-  background-color: green;
-}
-#cell-1-10, #cell-1-11, #cell-1-15, #cell-6-11 {
-  border: 0px;
-  background-color: yellow;
-}
-#cell-10-1, #cell-10-6, #cell-10-2, #cell-15-2 {
-  border: 0px;
-  background-color: red;
-}
-#cell-10-10, #cell-10-15, #cell-10-11, #cell-15-11 {
-  border: 0px;
-  background-color: blue;
-}
-.player-name
-{
-  font-size: 18px;
-  font-family: 'trebuchet MS';
-  font-weight: bold;
-  color: #000;
-}
-.circle {
-  border-radius: 50%;
-  border: 2px solid;
-  height: 46px;
-  width: 46px;
-  margin: auto;
-}
-.star-icon
-{
-  font-size: 32px;
-}
-.center-pattern {
-  height: 0;
-  width: 0;
-  border-left: 60px solid green;
-  border-right: 60px solid blue;
-  border-top: 60px solid yellow;
-  border-bottom: 60px solid red;
-}
-
-.circle {
-  position: relative;
-}
-
-.circle img {
-position: absolute;
-left: 0;
-right: 0;
-width: 60px;
-transform: translate(-8px, -30px);
-}
-</style>
 </head>
 
 <body>
+
+	<div class="container">
+
     <table id="ludo-board">
         <tr id="row-1">
             <td id="cell-1-1" rowspan="6"></td>
@@ -377,6 +212,15 @@ transform: translate(-8px, -30px);
             <td id="cell-15-11" colspan="4" class="player-name">Player 4</td>
         </tr>
     </table>
+
+    
+	<div class="ludo-field">
+		<div class="dice">
+		  <button id="diceRoll">Roll Dice</button>
+		  <div id="diceRollResult"></div>
+		</div>
+	</div>
+</div>
 </body>
 
 </html>
