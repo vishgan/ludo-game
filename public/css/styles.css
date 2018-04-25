@@ -1,0 +1,290 @@
+
+.container{ width: 604px; margin: 0 auto; }
+td {
+    height: 40px;
+    width: 38px;
+    padding: 0;
+    border: 2px solid black;
+    text-align: center;
+}
+#ludo-board {
+    margin-right: auto;
+    margin-left: auto;
+    border-collapse: collapse;
+    border: 2px solid;
+}
+#arrow-up,
+#arrow-down,
+#arrow-back,
+#arrow-forward
+{
+  font-size: 32px;
+}
+#arrow-down
+{
+  color: yellow;
+}
+#arrow-up
+{
+  color: red;
+}
+#arrow-forward
+{
+  color: green;
+}
+#arrow-back
+{
+  color: blue;
+}
+#cell-2-2,
+#cell-2-11,
+#cell-11-2,
+#cell-11-10
+{
+  border-right: 0;
+  border-bottom: 0;
+  padding-right: 2px;
+  padding-bottom: 2px;
+}
+#cell-2-4,
+#cell-2-13,
+#cell-11-4,
+#cell-11-13
+{
+  border-left: 0;
+  border-bottom: 0;
+  padding-left: 2px;
+  padding-bottom: 2px;
+}
+#cell-4-2,
+#cell-4-11,
+#cell-13-2,
+#cell-13-10
+{
+  border-right: 0;
+  border-top: 0;
+  padding-right: 2px;
+  padding-top: 2px;
+}
+#cell-4-4,
+#cell-4-13,
+#cell-13-4,
+#cell-13-13
+{
+  border-left: 0;
+  border-top: 0;
+  padding-left: 2px;
+  padding-top: 2px;
+}
+.green,
+#cell-7-2,
+#cell-8-2,
+#cell-8-3,
+#cell-8-4,
+#cell-8-5,
+#cell-8-6
+{
+    background-color: green;
+}
+.yellow,
+#cell-2-8,
+#cell-2-9,
+#cell-3-8,
+#cell-4-8,
+#cell-5-8,
+#cell-6-8
+{
+    background-color: yellow;
+}
+.blue,
+#cell-8-10,
+#cell-8-11,
+#cell-8-12,
+#cell-8-13,
+#cell-8-14,
+#cell-9-14
+{
+    background-color: blue;
+}
+.red,
+#cell-10-8,
+#cell-11-8,
+#cell-12-8,
+#cell-13-8,
+#cell-14-8,
+#cell-14-7
+{
+    background-color: red;
+}
+#cell-1-1, #cell-1-2, #cell-1-6, #cell-6-2 {
+  border: 0px;
+  background-color: green;
+}
+#cell-1-10, #cell-1-11, #cell-1-15, #cell-6-11 {
+  border: 0px;
+  background-color: yellow;
+}
+#cell-10-1, #cell-10-6, #cell-10-2, #cell-15-2 {
+  border: 0px;
+  background-color: red;
+}
+#cell-10-10, #cell-10-15, #cell-10-11, #cell-15-11 {
+  border: 0px;
+  background-color: blue;
+}
+.player-name
+{
+  font-size: 18px;
+  font-family: 'trebuchet MS';
+  font-weight: bold;
+  color: #000;
+}
+.circle {
+  border-radius: 50%;
+  border: 2px solid;
+  height: 46px;
+  width: 46px;
+  margin: auto;
+}
+.star-icon
+{
+  font-size: 32px;
+}
+.center-pattern {
+  height: 0;
+  width: 0;
+  border-left: 60px solid green;
+  border-right: 60px solid blue;
+  border-top: 62px solid yellow;
+  border-bottom: 62px solid red;
+}
+
+.circle {
+  position: relative;
+}
+
+.circle img {
+position: absolute;
+left: 0;
+right: 0;
+width: 60px;
+transform: translate(-8px, -30px);
+}
+
+
+
+
+/*dice css*/
+
+.dice {
+  height: 60px; width: 60px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 3px solid #000;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.dice.d-1{  animation: mymove1 .5s; animation-iteration-count:1; background: red;}
+.dice.d-2{  animation: mymove2 .5s; animation-iteration-count:1; background: blue;}
+.dice.d-3{  animation: mymove3 .5s; animation-iteration-count:1; background: orange;}
+.dice.d-4{  animation: mymove4 .5s; animation-iteration-count:1; background: black;}
+.dice.d-5{  animation: mymove5 .5s; animation-iteration-count:1; background: purple;}
+.dice.d-6{  animation: mymove6 .5s; animation-iteration-count:1; background: olive;}
+
+.dice button { height: 60px; width: 60px;
+ display: flex; justify-content: center; 
+ align-items: center; position: absolute; 
+ left: 0; right: 0; top: 0; bottom: 0; 
+ background: transparent; z-index: 1; transition: all ease .3s; border: 0}
+
+@keyframes mymove1 {
+  0% {transform: rotateX(0deg);}
+  10% {transform: rotateX(-60deg);}
+  20% {transform: rotateY(-120deg);}
+  30% {transform: rotateX(-180deg);}
+  40% {transform: rotateY(-240deg);}
+  50% {transform: rotateX(-360deg);}
+  60% {transform: rotateX(-240deg);}
+  70% {transform: rotateY(-180deg);}
+  80% {transform: rotateX(-120deg);}
+  90% {transform: rotateY(-60deg);}
+  100% {transform: rotate(0deg);}
+}
+
+@keyframes mymove2 {
+  0% {transform: rotateX(0deg);}
+  10% {transform: rotateX(-60deg);}
+  20% {transform: rotateY(-120deg);}
+  30% {transform: rotateX(-180deg);}
+  40% {transform: rotateY(-240deg);}
+  50% {transform: rotateX(-360deg);}
+  60% {transform: rotateX(-240deg);}
+  70% {transform: rotateY(-180deg);}
+  80% {transform: rotateX(-120deg);}
+  90% {transform: rotateY(-60deg);}
+  100% {transform: rotate(0deg);}
+}
+
+@keyframes mymove3 {
+  0% {transform: rotateX(0deg);}
+  10% {transform: rotateX(-60deg);}
+  20% {transform: rotateY(-120deg);}
+  30% {transform: rotateX(-180deg);}
+  40% {transform: rotateY(-240deg);}
+  50% {transform: rotateX(-360deg);}
+  60% {transform: rotateX(-240deg);}
+  70% {transform: rotateY(-180deg);}
+  80% {transform: rotateX(-120deg);}
+  90% {transform: rotateY(-60deg);}
+  100% {transform: rotate(0deg);}
+}
+
+@keyframes mymove4 {
+ 0% {transform: rotateX(0deg);}
+  10% {transform: rotateX(-60deg);}
+  20% {transform: rotateY(-120deg);}
+  30% {transform: rotateX(-180deg);}
+  40% {transform: rotateY(-240deg);}
+  50% {transform: rotateX(-360deg);}
+  60% {transform: rotateX(-240deg);}
+  70% {transform: rotateY(-180deg);}
+  80% {transform: rotateX(-120deg);}
+  90% {transform: rotateY(-60deg);}
+  100% {transform: rotate(0deg);}
+}
+
+@keyframes mymove5 {
+  0% {transform: rotateX(0deg);}
+  10% {transform: rotateX(-60deg);}
+  20% {transform: rotateY(-120deg);}
+  30% {transform: rotateX(-180deg);}
+  40% {transform: rotateY(-240deg);}
+  50% {transform: rotateX(-360deg);}
+  60% {transform: rotateX(-240deg);}
+  70% {transform: rotateY(-180deg);}
+  80% {transform: rotateX(-120deg);}
+  90% {transform: rotateY(-60deg);}
+  100% {transform: rotate(0deg);}
+}
+
+@keyframes mymove6 {
+ 0% {transform: rotateX(0deg);}
+  10% {transform: rotateX(-60deg);}
+  20% {transform: rotateY(-120deg);}
+  30% {transform: rotateX(-180deg);}
+  40% {transform: rotateY(-240deg);}
+  50% {transform: rotateX(-360deg);}
+  60% {transform: rotateX(-240deg);}
+  70% {transform: rotateY(-180deg);}
+  80% {transform: rotateX(-120deg);}
+  90% {transform: rotateY(-60deg);}
+  100% {transform: rotate(0deg);}
+}
+
+.dice button.active{ font-size: 0;}
+#diceRollResult {color:#fff; position: absolute; left: 0; right: 0; top: 0; bottom: 0; display: flex; 
+  justify-content:center; align-items: center; font-family: 'trebuchet Ms';}
