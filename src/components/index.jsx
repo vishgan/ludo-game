@@ -1,1 +1,2 @@
-export { Table } from './Table';
+export { Board } from './Board';
+export { Dice } from './Dice';
