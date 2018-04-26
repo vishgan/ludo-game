@@ -1,8 +1,19 @@
 import React, { PureComponent } from 'react';
+import { Dice } from '.';
 
-export class Table extends PureComponent {
+export class Board extends PureComponent {
+    state = {
+        diceValue: ''
+    };
+
+    updateDiceValue = (diceValue) => {
+        this.setState({ diceValue });
+    };
+
     render () {
-        return (         
+        const { diceValue } = this.state;
+
+        return (
             <div class="container">
                 <table id="ludo-board">
                     <tr id="row-1">
@@ -193,12 +204,7 @@ export class Table extends PureComponent {
                         <td id="cell-15-11" colspan="4" class="player-name">Player 4</td>
                     </tr>
                 </table>
-                <div class="ludo-field">
-                    <div class="dice">
-                    <button id="diceRoll">Roll Dice</button>
-                    <div id="diceRollResult"></div>
-                    </div>
-                </div>
+                <Dice diceValue={diceValue} updateDiceValue={this.updateDiceValue} />
             </div>
         );
     }
