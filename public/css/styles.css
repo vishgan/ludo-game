@@ -286,5 +286,5 @@ transform: translate(-8px, -30px);
 }
 
 .dice button.active{ font-size: 0;}
-#diceRollResult {color:#fff; position: absolute; left: 0; right: 0; top: 0; bottom: 0; display: flex; 
+#diceRollResult {position: absolute; left: 0; right: 0; top: 0; bottom: 0; display: flex;
   justify-content:center; align-items: center; font-family: 'trebuchet Ms';}
