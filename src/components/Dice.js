@@ -1,22 +1,20 @@
 import React from 'react';
 
-export const Dice = ({ diceValue, updateDiceValue }) => {
+export const Dice = ({ diceValue, isRolling, updateDiceValue }) => {
   const rollDice = () => {
     return Math.floor(Math.random() * 6 + 1);
   };
 
   const onRoll = () => {
     var value = rollDice();
-    document.getElementById("diceRoll").setAttribute("class", "active");
-    document.getElementsByClassName("dice")[0].setAttribute("class", `dice d-${value}`);
     updateDiceValue(value);
   };
 
   return (
     <div class="ludo-field">
-      <div class="dice">
-        <button id="diceRoll" onClick={onRoll}>Roll Dice</button>
-        <div id="diceRollResult">{diceValue}</div>
+      <div class={"dice d-" + diceValue}>
+        <button id="diceRoll" class={isRolling && "active"} onClick={onRoll}></button>
+        <div id="diceRollResult">{diceValue || "Roll Dice"}</div>
       </div>
     </div>
   );

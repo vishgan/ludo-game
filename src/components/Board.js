@@ -19,20 +19,20 @@ export function Board() {
       <tr id="row-2">
         <td id="cell-2-2" colspan="2" rowspan="2">
           <div class="circle green">
-              <img src="images/green.svg" alt="green" />
+              <img id="p1-1" src="images/green.svg" alt="green" />
           </div>
         </td>
         <td id="cell-2-4" colspan="2" rowspan="2">
-          <div class="circle green"><img src="images/green.svg" alt="green" /></div>
+          <div class="circle green"><img id="p1-2" src="images/green.svg" alt="green" /></div>
         </td>
         <td id="cell-2-7"></td>
         <td id="cell-2-8"></td>
         <td id="cell-2-9"></td>
         <td id="cell-2-11" colspan="2" rowspan="2">
-          <div class="circle yellow"><img src="images/yellow.svg" alt="green" /></div>
+          <div class="circle yellow"><img id="p1-3" src="images/yellow.svg" alt="green" /></div>
         </td>
         <td id="cell-2-13" colspan="2" rowspan="2">
-          <div class="circle yellow"><img src="images/yellow.svg" alt="green" /></div>
+          <div class="circle yellow"><img id="p1-4" src="images/yellow.svg" alt="green" /></div>
         </td>
       </tr>
       <tr id="row-3">
@@ -44,19 +44,19 @@ export function Board() {
       </tr>
       <tr id="row-4">
         <td id="cell-4-2" colspan="2" rowspan="2">
-          <div class="circle green"><img src="images/green.svg" alt="green" /></div>
+          <div class="circle green"><img id="p2-1" src="images/green.svg" alt="green" /></div>
         </td>
         <td id="cell-4-4" colspan="2" rowspan="2">
-          <div class="circle green"><img src="images/green.svg" alt="green" /></div>
+          <div class="circle green"><img id="p2-2" src="images/green.svg" alt="green" /></div>
         </td>
         <td id="cell-4-7"></td>
         <td id="cell-4-8"></td>
         <td id="cell-4-9"></td>
         <td id="cell-4-11" colspan="2" rowspan="2">
-          <div class="circle yellow"><img src="images/yellow.svg" alt="green" /></div>
+          <div class="circle yellow"><img id="p2-3" src="images/yellow.svg" alt="green" /></div>
         </td>
         <td id="cell-4-13" colspan="2" rowspan="2">
-          <div class="circle yellow"><img src="images/yellow.svg" alt="green" /></div>
+          <div class="circle yellow"><img id="p2-4" src="images/yellow.svg" alt="green" /></div>
         </td>
       </tr>
       <tr id="row-5">
@@ -137,19 +137,19 @@ export function Board() {
       </tr>
       <tr id="row-11">
         <td id="cell-11-2" colspan="2" rowspan="2">
-          <div class="circle red"><img src="images/red.svg" alt="green" /></div>
+          <div class="circle red"><img id="p3-1" src="images/red.svg" alt="green" /></div>
         </td>
         <td id="cell-11-4" colspan="2" rowspan="2">
-          <div class="circle red"><img src="images/red.svg" alt="green" /></div>
+          <div class="circle red"><img id="p3-2" src="images/red.svg" alt="green" /></div>
         </td>
         <td id="cell-11-7"></td>
         <td id="cell-11-8"></td>
         <td id="cell-11-9"></td>
         <td id="cell-11-10" colspan="2" rowspan="2">
-          <div class="circle blue"><img src="images/blue.svg" alt="green" /></div>
+          <div class="circle blue"><img id="p3-3" src="images/blue.svg" alt="green" /></div>
         </td>
         <td id="cell-11-13" colspan="2" rowspan="2">
-          <div class="circle blue"><img src="images/blue.svg" alt="green" /></div>
+          <div class="circle blue"><img id="p3-4" src="images/blue.svg" alt="green" /></div>
         </td>
       </tr>
       <tr id="row-12">
@@ -159,10 +159,10 @@ export function Board() {
       </tr>
       <tr id="row-13">
         <td id="cell-13-2" colspan="2" rowspan="2">
-          <div class="circle red"><img src="images/red.svg" alt="green" /></div>
+          <div class="circle red"><img id="p4-1" src="images/red.svg" alt="green" /></div>
         </td>
         <td id="cell-13-4" colspan="2" rowspan="2">
-          <div class="circle red"><img src="images/red.svg" alt="green" /></div>
+          <div class="circle red"><img id="p4-2" src="images/red.svg" alt="green" /></div>
         </td>
         <td id="cell-13-7"></td>
         <td id="cell-13-8"></td>
@@ -170,10 +170,10 @@ export function Board() {
           <i class="material-icons star-icon">star_border</i>
         </td>
         <td id="cell-13-10" colspan="2" rowspan="2">
-          <div class="circle blue"><img src="images/blue.svg" alt="green" /></div>
+          <div class="circle blue"><img id="p4-3" src="images/blue.svg" alt="green" /></div>
         </td>
         <td id="cell-13-13" colspan="2" rowspan="2">
-          <div class="circle blue"><img src="images/blue.svg" alt="green" /></div>
+          <div class="circle blue"><img id="p4-4" src="images/blue.svg" alt="green" /></div>
         </td>
       </tr>
       <tr id="row-14">

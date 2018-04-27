@@ -4,16 +4,31 @@ import { Board, Dice } from '.';
 const VICTORY_HOUSE = 'victory_house';
 
 export class Main extends Component {
+  players = ['p1', 'p2', 'p3', 'p4'];
   safeHouses = ['2-3', '6-12', '8-2', '12-5'];
   initialPositions = {
-    player1: ['1-0', '1-1', '3-0', '3-1'],
-    player2: ['1-5', '1-6', '3-5', '3-6'],
-    player3: ['10-0', '10-1', '12-0', '12-1'],
-    player4: ['10-5', '10-6', '12-5', '12-6'],
+    [this.players[0]+'-1']: '1-0',
+    [this.players[0]+'-2']: '1-1',
+    [this.players[0]+'-3']: '3-0',
+    [this.players[0]+'-4']: '3-1',
+    [this.players[1]+'-1']: '1-5',
+    [this.players[1]+'-2']: '1-6',
+    [this.players[1]+'-3']: '3-5',
+    [this.players[1]+'-4']: '3-6',
+    [this.players[2]+'-1']: '10-0',
+    [this.players[2]+'-2']: '10-1',
+    [this.players[2]+'-3']: '12-0',
+    [this.players[2]+'-4']: '12-1',
+    [this.players[3]+'-1']: '10-5',
+    [this.players[3]+'-2']: '10-6',
+    [this.players[3]+'-3']: '12-5',
+    [this.players[3]+'-4']: '12-6',
   };
   state = {
-    turn: 'player1',
+    turn: this.players[0],
     diceValue: '',
+    isRolling: false,
+    pawnPositions: this.initialPositions,
   };
 
   updateDiceValue = (diceValue) => {
@@ -22,10 +37,12 @@ export class Main extends Component {
   };
 
   render () {
+    const { isRolling, diceValue } = this.state;
+
     return (
       <div class="container">
         <Board />
-        <Dice diceValue={this.state.diceValue} updateDiceValue={this.updateDiceValue} />
+        <Dice diceValue={diceValue} isRolling={isRolling} updateDiceValue={this.updateDiceValue} />
       </div>
     );
   }
