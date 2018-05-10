@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+<title></title>
+<g>
+	<title>background</title>
+	<rect id="canvas_background" x="-1" y="-1" fill="none" width="102" height="102"/>
+</g>
+<g>
+	<title>Layer 1</title>
+	<g id="Icons_with_numbers">
+		<g id="Group">
+			<path id="Oval_208" fill="#EDDCDC" stroke="#000000" stroke-width="2" d="M20.123,37.437C20.042,36.46,20,35.472,20,34.474
+				C20,16.475,33.432,1.884,50,1.884s30,14.591,30,32.589c0,0.999-0.041,1.987-0.122,2.963H80c0,17.81-30,59.253-30,59.253
+				S20,55.345,20,37.437H20.123z M50,43.362c6.627,0,12-5.306,12-11.851S56.627,19.66,50,19.66c-6.627,0-12,5.306-12,11.851
+				S43.373,43.362,50,43.362z"/>
+		</g>
+	</g>
+	<ellipse id="svg_2" fill="#008000" cx="50" cy="33.791" rx="26.813" ry="28.625"/>
+</g>
+</svg>
