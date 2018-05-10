@@ -1,6 +1,0 @@
-{
-  "short_name": "Ludo",
-  "name": "Ludo game",
-  "start_url": "./index.html",
-  "display": "standalone"
-}
