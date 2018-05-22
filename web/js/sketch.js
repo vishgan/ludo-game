@@ -1,4 +1,4 @@
-function() {
+(function() {
   var container = $('#ludo-container');
 
   window.drawBoard = function() {
@@ -15,13 +15,13 @@ function() {
   }
 
   function drawTable() {
-    var i, j, html, text;
+    var i, j, html;
     html = '<table id="ludo-board">';
     for (i = 1; i <= 15; i++) {
       html += '<tr>';
       for (j = 1; j <= 15; j++) {
         html += `
-          <td id="cell-${i}-${j}">${text}</td>
+          <td id="cell-${i}-${j}"></td>
         `;
       }
       html += '</tr>';
@@ -125,4 +125,4 @@ function() {
     $('#cell-8-15').html('<i id="arrow-back" class="material-icons">arrow_back</i>');
     $('#cell-15-8').html('<i id="arrow-up" class="material-icons">arrow_upward</i>');
   }
-}
+})();
