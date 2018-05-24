@@ -11,25 +11,25 @@ function expects(actualCoords, expectedCoords) {
 // 8, 15, blue
 // 15, 8, red
 (function testArrows() {
-  next = getNextCoords(1, 8, 'yellow');
+  next = getNextCoords(1, 8, 'yellow', 'lastcell-yellow');
   expects(next, { row: 2, col: 8 });
 
   next = getNextCoords(1, 8, 'green');
   expects(next, { row: 1, col: 9 });
 
-  next = getNextCoords(8, 1, 'green');
+  next = getNextCoords(8, 1, 'green', 'lastcell-green');
   expects(next, { row: 8, col: 2 });
 
   next = getNextCoords(8, 1, 'red');
   expects(next, { row: 9, col: 1 });
 
-  next = getNextCoords(8, 15, 'blue');
+  next = getNextCoords(8, 15, 'blue', 'lastcell-blue');
   expects(next, { row: 8, col: 14 });
 
   next = getNextCoords(8, 15, 'green');
   expects(next, { row: 9, col: 15 });
 
-  next = getNextCoords(15, 8, 'red');
+  next = getNextCoords(15, 8, 'red', 'lastcell-red');
   expects(next, { row: 14, col: 8 });
 
   next = getNextCoords(15, 8, 'blue');
