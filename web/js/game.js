@@ -12,12 +12,14 @@ const getNextCoords = (row, col, color, cellName='') => {
   if (8 === row) {
     if (1 === col) return { row: --row, col };
     if (15 === col) return { row: ++row, col };
-    return findNextOnVictoryHousePath(row, col);
+    [row, col] = findNextOnVictoryHousePath(row, col);
+    return { row, col };
   }
   if (8 === col) {
     if (15 === row) return { row, col: --col };
     if (1 === row) return { row, col: ++col };
-    return findNextOnVictoryHousePath(col, row).reverse();
+    [row, col] = findNextOnVictoryHousePath(col, row).reverse();
+    return { row, col };
   }
   if (7 === row) {
     if (6 === col) return { row: --row, col: ++col };
@@ -44,7 +46,7 @@ const getNextCoords = (row, col, color, cellName='') => {
 }
 
 const findNextOnVictoryHousePath = (i, j) => {
-  if (j < 6) return { row: i, col: ++j };
-  if (6 === j | 10 === j) return { row: 0, col: 0 };
-  return { row: i, col: --j };
+  if (j < 6) return [i, ++j];
+  if (6 === j | 10 === j) return [0, 0];
+  return [i, --j];
 };

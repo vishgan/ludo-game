@@ -21,7 +21,7 @@ function expects(actualCoords, expectedCoords) {
   expects(next, { row: 8, col: 2 });
 
   next = getNextCoords(8, 1, 'red');
-  expects(next, { row: 9, col: 1 });
+  expects(next, { row: 7, col: 1 });
 
   next = getNextCoords(8, 15, 'blue', 'lastcell-blue');
   expects(next, { row: 8, col: 14 });
@@ -54,16 +54,16 @@ function expects(actualCoords, expectedCoords) {
 
 (function testWinningMove() {
   next = getNextCoords(8, 6);
-  expects(next, { row: 8, col: 8 });
+  expects(next, { row: 0, col: 0 });
 
   next = getNextCoords(8, 10);
-  expects(next, { row: 8, col: 8 });
+  expects(next, { row: 0, col: 0 });
 
   next = getNextCoords(6, 8);
-  expects(next, { row: 8, col: 8 });
+  expects(next, { row: 0, col: 0 });
 
   next = getNextCoords(10, 8);
-  expects(next, { row: 8, col: 8 });
+  expects(next, { row: 0, col: 0 });
 })();
 
 (function testRightMoves() {
@@ -132,7 +132,7 @@ function expects(actualCoords, expectedCoords) {
   expects(next, { row: 2, col: 9 });
 
   next = getNextCoords(5, 9);
-  expects(next, { row: 5, col: 10 });
+  expects(next, { row: 6, col: 9 });
 
   next = getNextCoords(7, 15);
   expects(next, { row: 8, col: 15 });
@@ -141,7 +141,7 @@ function expects(actualCoords, expectedCoords) {
   expects(next, { row: 11, col: 9 });
 
   next = getNextCoords(14, 9);
-  expects(next, { row: 14, col: 9 });
+  expects(next, { row: 15, col: 9 });
 
   next = getNextCoords(2, 8);
   expects(next, { row: 3, col: 8 });
